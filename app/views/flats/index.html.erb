@@ -1,0 +1,17 @@
+<h1>here's all our flats in <%= @location %></h1>
+
+
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-3">
+        <p><%= flat['name'] %>, price: <%= flat['price'] %></p>
+        <%= link_to "visit flat", flats_path(flat['id']) %>
+        <%= image_tag flat['imageUrl'], alt: "flat image", class: "main-image" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%# body>.container>#title+h2.header>.row*3 %>
